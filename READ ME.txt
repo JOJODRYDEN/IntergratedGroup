@@ -1,7 +1,7 @@
 08/03/2025
-Integrated Group Project
+Integrated Group Project CI356
 University of Brighton
 
 Branch by Zayne Zafar
 
-This Unity project is a single player game which will delivered for our assignment.
+This Unity 2019.4.21f1 project is a single player game which will delivered for our assignment.
