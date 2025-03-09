@@ -404,6 +404,7 @@ GameObject:
   - component: {fileID: 1640828903}
   - component: {fileID: 1640828902}
   - component: {fileID: 1640828907}
+  - component: {fileID: 1640828908}
   m_Layer: 0
   m_Name: Grimsby(PC)
   m_TagString: Untagged
@@ -496,7 +497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640828901}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 20.51, z: 0}
+  m_LocalPosition: {x: 0, y: 5.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1868679629}
@@ -517,11 +518,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fl_movementSpeed: 5
-  fl_jumpSpeed: 0
+  fl_jumpSpeed: 3
   fl_slowdownSpeed: 2
   fl_maxGroundedSpeed: 15
   fl_stopSpeed: 4
-  bl_canMoveMidair: 1
+  bl_canMoveMidair: 0
+  bl_grounded: 0
+--- !u!65 &1640828908
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640828901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 0.2, z: 0.7}
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &1868679628
 GameObject:
   m_ObjectHideFlags: 0
