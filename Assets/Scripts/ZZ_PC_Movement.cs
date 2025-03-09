@@ -65,38 +65,33 @@ public class ZZ_PC_Movement : MonoBehaviour
 
     //---------------------------------
 
-    //sets v3_movementDirection to normalised, local inputs
+    //sets v3_movementDirection to normalised inputs
     private void takeInput(bool touchingGround)
     {
-        Vector3 v3_relativeMovementDirection;
-        
-        if(touchingGround)
+        if (touchingGround)
         {//if you're touching ground, then you can jump
-            v3_relativeMovementDirection = transform.InverseTransformDirection(new Vector3(
+            v3_movementDirection = new Vector3(
                 Input.GetAxis("Horizontal"),
                 Convert.ToSingle(Input.GetButton("Jump")),
                 Input.GetAxis("Vertical")
-                ).normalized);
+                ).normalized;
         }
         else
         {//otherwise you cant jump
-            v3_relativeMovementDirection = transform.InverseTransformDirection(new Vector3(
+            v3_movementDirection = new Vector3(
                 Input.GetAxis("Horizontal"),
                 0,
                 Input.GetAxis("Vertical")
-                ).normalized);
+                ).normalized;
         }
-
-        v3_movementDirection = v3_relativeMovementDirection;
     }
 
-    //adds v3_movementDirection to velocity of rb_PC
+    //adds v3_movementDirection to velocity of rb_PC depending on which way rb_PC is facing
     private void move()
     {
-        rb_PC.velocity += new Vector3(
-            v3_movementDirection.x * fl_movementSpeed, 
-            v3_movementDirection.y * fl_jumpSpeed, 
-            v3_movementDirection.z * fl_movementSpeed);
+        rb_PC.velocity += (transform.right * v3_movementDirection.x) * fl_movementSpeed;
+        rb_PC.velocity += (transform.up * v3_movementDirection.y) * fl_jumpSpeed;
+        rb_PC.velocity += (transform.forward * v3_movementDirection.z) * fl_movementSpeed;
     }
 
     //gradualy reduces rb_PC.velocity to 0
