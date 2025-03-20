@@ -10,7 +10,7 @@ public class ZZ_PC_Movement : MonoBehaviour
     [SerializeField] private float fl_movementSpeed = 5f;
     [SerializeField] private float fl_jumpSpeed = 5f;
     [SerializeField] private float fl_slowdownSpeed = 5f;
-    [SerializeField] private float fl_maxGroundedSpeed = 15f;
+    [SerializeField] private float fl_maxSpeed = 15f;
     [SerializeField] private float fl_stopSpeed = 3f;
     [SerializeField] private bool bl_canMoveMidair = true;
     [SerializeField] private bool bl_grounded = true;
@@ -131,23 +131,23 @@ public class ZZ_PC_Movement : MonoBehaviour
     //limits horizontal rb_PC.velocity to v3_maxGroundSpeed
     private void limitTopSpeed()
     {
-        if (rb_PC.velocity.x > fl_maxGroundedSpeed)
+        if (rb_PC.velocity.x > fl_maxSpeed)
         {
-            rb_PC.velocity = new Vector3(fl_maxGroundedSpeed, rb_PC.velocity.y, rb_PC.velocity.z);
+            rb_PC.velocity = new Vector3(fl_maxSpeed, rb_PC.velocity.y, rb_PC.velocity.z);
         }
-        if (rb_PC.velocity.z > fl_maxGroundedSpeed)
+        if (rb_PC.velocity.z > fl_maxSpeed)
         {
-            rb_PC.velocity = new Vector3(rb_PC.velocity.x, rb_PC.velocity.y, fl_maxGroundedSpeed);
+            rb_PC.velocity = new Vector3(rb_PC.velocity.x, rb_PC.velocity.y, fl_maxSpeed);
         }
 
 
-        if (rb_PC.velocity.x < -fl_maxGroundedSpeed)
+        if (rb_PC.velocity.x < -fl_maxSpeed)
         {
-            rb_PC.velocity = new Vector3(-fl_maxGroundedSpeed, rb_PC.velocity.y, rb_PC.velocity.z);
+            rb_PC.velocity = new Vector3(-fl_maxSpeed, rb_PC.velocity.y, rb_PC.velocity.z);
         }
-        if (rb_PC.velocity.z < -fl_maxGroundedSpeed)
+        if (rb_PC.velocity.z < -fl_maxSpeed)
         {
-            rb_PC.velocity = new Vector3(rb_PC.velocity.x, rb_PC.velocity.y, -fl_maxGroundedSpeed);
+            rb_PC.velocity = new Vector3(rb_PC.velocity.x, rb_PC.velocity.y, -fl_maxSpeed);
         }
     }
 }

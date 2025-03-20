@@ -1,0 +1,38 @@
+ZZ_PC_Movement
+Made to be placed on the PC, requires a Rigidbody as well as a trigger volume for ground detection.
+This enables W, A, S, D movement.
+
+fl_slowdownSpeed controls how strongly the PC's horizontal speed is lost when grounded (i.e. how fast the pc slows down after the player lets go of a direction button).
+
+fl_maxSpeed dictates the maximum horizontal speed of the PC regardless of whether they're grounded.
+
+fl_stopSpeed is the "deadzone" for fl_slowdownSpeed. Essentially, speed is reduced until it is under fl_stopSpeed. decrease this if the PC cant slow down enough to stop moving.
+
+bl_canMoveMidair when set to true, allows the PC to move horizontally whilst in midair.
+
+bl_grounded is true when there is geometry beneath the PC. it is used to manage jumping, as well as movement when bl_canMove_Midair is false.
+
+
+
+ZZ_PC_Look
+Made to be placed on the camera childed to the PC and requires that the PC has a Rigidbody.
+This enables mouse movement/looking by rotating the camera along its X axis and the PC's rigidbody along its Y axis.
+The rigidbody's horizontal roatation is not local however, so a getter from the gravity invertion script is used to invert the horizontal looking when the PC is upsidedown.
+
+There is a bug where if you look directly up or down and rotate the PC 180 degrees along the Z axis via external means (like the gravity invertion script), it becomes possible to rotate the camera incorrectly. This is bandage fixed with a limit to how far up and down you can rotate the camera.
+
+
+
+ZZ_GravityInvertion
+Can be placed on objects as well as the PC. 
+If placed on an object, the object must have a rigidbody with gravity enabled and bl_PC needs to be set to false to disable the rotation effect which can be incorrect as they do not have a set orientation like the PC.
+
+This enables the invertion of gravity for whatever game object the script is placed on. If on the PC, the player can press F to invert gravity which will also rotate the player along their Z axis.
+If on an object, the player can press C when in range of the object to invert its gravity.
+
+bl_flipped is true when the game object is using inverted gravity.
+fl_timerMax determines the time (in seconds) it takes to rotate the PC 180 degrees when gravity is inverted (unused when script not on PC).
+bl_PC set this to true if the script is on the PC or false if it is isn't.
+fl_activationRange is the max distance the PC must be within to invert the gravity of the game object (unused when script on PC).
+
+There are two getters, one for bl_flipped, getFlipped(), which is used by the PCLook script. And a getter for the rotation completion percentage, getGravityPowerCooldownPercentage(), which starts at 0 and reaches 100 when the PC has fully rotataed 180 degrees.
