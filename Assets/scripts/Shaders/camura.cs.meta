@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 02bf208c7e4d87248be63be763d622c0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - CamuraShader: {fileID: 4800000, guid: 4ac0c17e443b9cf40b0ecf61d2070ef7, type: 3}
+  - CamuraMaterial: {fileID: 2100000, guid: 5d19d4ca01095b049a4862658f416873, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
