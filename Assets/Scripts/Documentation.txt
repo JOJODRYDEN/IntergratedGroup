@@ -12,6 +12,8 @@ bl_canMoveMidair when set to true, allows the PC to move horizontally whilst in 
 
 bl_grounded is true when there is geometry beneath the PC. it is used to manage jumping, as well as movement when bl_canMove_Midair is false.
 
+int_groundedObjectsCount is the number of objects in the trigger volume under the PC. It is used to set bl_grounded.
+
 
 
 ZZ_PC_Look

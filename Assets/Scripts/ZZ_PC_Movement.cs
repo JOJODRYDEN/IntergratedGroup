@@ -14,6 +14,7 @@ public class ZZ_PC_Movement : MonoBehaviour
     [SerializeField] private float fl_stopSpeed = 3f;
     [SerializeField] private bool bl_canMoveMidair = true;
     [SerializeField] private bool bl_grounded = true;
+    [SerializeField] private int int_groundedObjectsCount = 0;
     private Vector3 v3_movementDirection = new Vector3(0, 0, 0);
 
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class ZZ_PC_Movement : MonoBehaviour
     void Update()
     {
         takeInput(bl_grounded);
+        updateGrounded();
     }
 
     void FixedUpdate()
@@ -55,12 +57,16 @@ public class ZZ_PC_Movement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        bl_grounded = true;
+        //if something enters the trigger, increment the counter
+        if (other.tag != "Player")
+        { int_groundedObjectsCount++; }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        bl_grounded = false;
+        //if something exits the trigger, decrement the counter
+        if (other.tag != "Player")
+        { int_groundedObjectsCount--; }
     }
 
     //---------------------------------
@@ -149,5 +155,15 @@ public class ZZ_PC_Movement : MonoBehaviour
         {
             rb_PC.velocity = new Vector3(rb_PC.velocity.x, rb_PC.velocity.y, -fl_maxSpeed);
         }
+    }
+
+    //sets grounded to ether true or false depending on how many objects are in the ground collision trigger
+    private void updateGrounded()
+    {
+        if (int_groundedObjectsCount > 0)
+        { bl_grounded = true; }
+
+        else if (int_groundedObjectsCount <= 0)
+        { bl_grounded = false; }
     }
 }

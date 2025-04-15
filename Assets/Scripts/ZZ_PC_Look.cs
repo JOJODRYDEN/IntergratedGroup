@@ -16,6 +16,9 @@ public class ZZ_PC_Look : MonoBehaviour
         go_PCcamera = GameObject.FindGameObjectWithTag("MainCamera");
         rb_PC = GetComponentInParent<Rigidbody>();
         scr_gravityInversion = GetComponentInParent<ZZ_GravityInvertion>();
+
+        //lock mouse to center of view
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
