@@ -47,7 +47,7 @@ public class ZZ_GravityInvertion : MonoBehaviour
             }
 
             //can only invert gravity if timer is not active
-            if (Input.GetKeyDown("f") && !bl_timerActive)
+            if (Input.GetButtonDown("GravPC") && !bl_timerActive)
             {
                 bl_timerActive = true;
 
@@ -66,7 +66,7 @@ public class ZZ_GravityInvertion : MonoBehaviour
         else
         {//if script is not on PC
             // can only invert gravity if PC in range
-            if (Input.GetKeyDown("c") && Vector3.Distance(GameObject.FindWithTag("Player").transform.position, transform.position) <= fl_activationRange)
+            if (Input.GetButtonDown("GravObj") && Vector3.Distance(GameObject.FindWithTag("Player").transform.position, transform.position) <= fl_activationRange)
             {
                 //invert bl_flipped
                 if (bl_flipped)
