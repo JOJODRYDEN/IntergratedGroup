@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class ZZ_PC_Look : MonoBehaviour
 {
+    private ZZ_GravityInvertion scr_gravityInversion;
     private GameObject go_PCcamera;
     private Rigidbody rb_PC;
-    [SerializeField] private float fl_lookSpeed = 3;
     private Vector3 v3_lookDirection = Vector3.zero;
     
     // Start is called before the first frame update
@@ -15,6 +15,10 @@ public class ZZ_PC_Look : MonoBehaviour
     {
         go_PCcamera = GameObject.FindGameObjectWithTag("MainCamera");
         rb_PC = GetComponentInParent<Rigidbody>();
+        scr_gravityInversion = GetComponentInParent<ZZ_GravityInvertion>();
+
+        //lock mouse to center of view
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -22,7 +26,9 @@ public class ZZ_PC_Look : MonoBehaviour
     {
         getLookDirection();
         look();
+        limitXLookAngle();
 
+        //Debug.Log(rb_PC.transform.localEulerAngles.y);
         //Debug.Log("Look Direction:" + v3_lookDirection);
     }
 
@@ -41,9 +47,31 @@ public class ZZ_PC_Look : MonoBehaviour
     void look()
     {
         //horizontal looking rotates the whole character
-        rb_PC.transform.eulerAngles -= new Vector3(0, v3_lookDirection.y, 0);
+        if (!scr_gravityInversion.getFlipped())
+        {
+            rb_PC.transform.eulerAngles -= new Vector3(0, v3_lookDirection.y, 0);
+        }
+        else
+        {
+            //if flipped, invert horizontal looking
+            rb_PC.transform.eulerAngles += new Vector3(0, v3_lookDirection.y, 0);
+        }
 
         //Vertical looking rotates the camera
-        go_PCcamera.transform.eulerAngles -= new Vector3(v3_lookDirection.x, 0, 0);
+        go_PCcamera.transform.localEulerAngles -= new Vector3(v3_lookDirection.x, 0, 0);
+    }
+
+    //limits vertical camera movement as to prevent incorrect camera rotation when rotating PC rigidbody
+    void limitXLookAngle()
+    {
+        if (go_PCcamera.transform.localEulerAngles.x <= 280 && go_PCcamera.transform.localEulerAngles.x > 90)
+        {
+            go_PCcamera.transform.localEulerAngles = new Vector3(280, go_PCcamera.transform.localEulerAngles.y, go_PCcamera.transform.localEulerAngles.z);
+        }
+
+        if (go_PCcamera.transform.localEulerAngles.x >= 80 && go_PCcamera.transform.localEulerAngles.x < 270)
+        {
+            go_PCcamera.transform.localEulerAngles = new Vector3(80, go_PCcamera.transform.localEulerAngles.y, go_PCcamera.transform.localEulerAngles.z);
+        }
     }
 }
