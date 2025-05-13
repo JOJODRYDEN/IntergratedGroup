@@ -1,0 +1,1 @@
+This document is a test for using Git for the first time
