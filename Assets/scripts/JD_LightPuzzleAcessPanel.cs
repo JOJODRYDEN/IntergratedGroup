@@ -6,11 +6,16 @@ public class JD_LightPuzzleAcessPanel : MonoBehaviour, IInteractable
 {
     public GameObject PLayerCamura;
     public GameObject PuzzleCamura;
+    [SerializeField] public  ZZ_PC_Movement playerMovementScript;
+    
     public void Interact()
     {
         Debug.Log("player interacted");
         PLayerCamura.SetActive(false);
         PuzzleCamura.SetActive(true);
+        playerMovementScript.gameObject.SetActive(false);
+
+
     }
 
     public void Update()
@@ -19,6 +24,7 @@ public class JD_LightPuzzleAcessPanel : MonoBehaviour, IInteractable
         {
             PLayerCamura.SetActive(true);
             PuzzleCamura.SetActive(false);
+            playerMovementScript.gameObject.SetActive(true);
         }
     }
 }

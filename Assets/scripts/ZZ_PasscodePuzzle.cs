@@ -9,7 +9,9 @@ public class ZZ_PasscodePuzzle : MonoBehaviour
     [SerializeField] private int PswdScndNumber = 3;
     [SerializeField] private int PswdThirNumber = 3;
     [SerializeField] private int PswdFourNumber = 3;
-    [SerializeField] public RP_GateBehaviour OpenGate;
+    [SerializeField] private RP_GateBehaviour OpenGate;
+
+    private AudioSource audioSourceComponent;
 
     private int inputCounter;
 
@@ -21,6 +23,8 @@ public class ZZ_PasscodePuzzle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSourceComponent = gameObject.GetComponent<AudioSource>();
+
         inputCounter = 0;
 
         passcode[0] = PwdFrstNumber;
@@ -61,6 +65,8 @@ public class ZZ_PasscodePuzzle : MonoBehaviour
     private void resetInputCode()
     {
         Debug.Log("Puzzle failed! Try again...");
+
+        audioSourceComponent.Play();
 
         inputCounter = 0;
 

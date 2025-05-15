@@ -40,5 +40,11 @@ public class RP_GateBehaviour : MonoBehaviour
        
     }
 
-    
+    public void IntantOpenGate()
+    {
+        gameObject.SetActive(false);
+
+    }
+
+
 }

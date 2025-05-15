@@ -30,6 +30,7 @@ public class ZZ_RemoteEnableObject : MonoBehaviour
         if (requestsUntilToggle <= 0)
         {
             objToToggle.SetActive(toggleActive);
+
         }
 
     }
