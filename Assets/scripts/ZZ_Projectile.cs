@@ -21,7 +21,7 @@ public class ZZ_Projectile : MonoBehaviour
        transform.position += transform.TransformDirection(Vector3.forward);
 
     }
-
+  
     //-----------------------------------------------
 
     public void SetSpeed(float newSpeed)
