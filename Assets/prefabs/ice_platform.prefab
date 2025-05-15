@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 834497399231358522}
   - component: {fileID: 4340169747240003999}
   - component: {fileID: 2008489066956578133}
+  - component: {fileID: -772314357869041660}
   m_Layer: 0
   m_Name: ice_platform
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &-772314357869041660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62885854814436480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.024515683, y: 0.023099286, z: 0.019999998}
+  m_Center: {x: -0.00071341544, y: -0.00018141787, z: 0}
