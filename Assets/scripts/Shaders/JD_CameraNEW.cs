@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [ExecuteInEditMode]
-public class camura : MonoBehaviour
+public class JD_CameraNEW : MonoBehaviour
 {
     // Shader to apply the pixelated cel-shading effect
     public Shader CamuraShader;
@@ -49,7 +49,7 @@ public class camura : MonoBehaviour
     {
         if (CamuraMaterial)
         {
-            CamuraMaterial.SetFloat("_PixelSize", pixelSize); 
+            CamuraMaterial.SetFloat("_PixelSize", pixelSize);
 
             CamuraMaterial.SetFloat("_WaveWarpStrength", waveWarpStrength);
             CamuraMaterial.SetFloat("_WaveWarpSpeed", waveWarpSpeed);

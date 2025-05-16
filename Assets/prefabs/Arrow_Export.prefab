@@ -89,8 +89,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1411307448456998587}
   - component: {fileID: 1449950004773456212}
-  - component: {fileID: 1449950004773456213}
   - component: {fileID: 1449950004773456214}
+  - component: {fileID: 4034226525674476689}
+  - component: {fileID: 3635141306679297026}
   m_Layer: 0
   m_Name: Arrow_Export
   m_TagString: Untagged
@@ -154,20 +155,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1449950004773456213
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791913720936674305}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &1449950004773456214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +170,33 @@ MonoBehaviour:
   lifeTime: 5
   speed: 5
   damage: 1
+--- !u!114 &4034226525674476689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791913720936674305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3801d1b3b98bc34dbf378c91b5c8001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  in_damage: 5
+  bl_destroyOnHit: 1
+--- !u!65 &3635141306679297026
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791913720936674305}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.961227, y: 0.2531979, z: 0.29959095}
+  m_Center: {x: 0.0793207, y: 0.16654992, z: -0.021327972}
 --- !u!1 &3023307439666085507
 GameObject:
   m_ObjectHideFlags: 0

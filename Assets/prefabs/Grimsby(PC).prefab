@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8645773241263908778}
   - component: {fileID: 8164714508774316947}
   - component: {fileID: 3835993572741428568}
+  - component: {fileID: 3038122529178703412}
   m_Layer: 0
   m_Name: Grimsby(PC)
   m_TagString: Player
@@ -117,6 +118,20 @@ CapsuleCollider:
   m_Height: 2.8
   m_Direction: 1
   m_Center: {x: 0, y: -0.25, z: 0}
+--- !u!114 &3038122529178703412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645773241263908782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169134b310afdbf45b5feb1c76900f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  in_healthMax: 100
+  in_health: 100
 --- !u!1 &8645773241781043005
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +145,7 @@ GameObject:
   - component: {fileID: 8645773241781043002}
   - component: {fileID: 8645773241781043001}
   - component: {fileID: 1027157187005158833}
-  - component: {fileID: 434004495760399420}
+  - component: {fileID: 3371023105346851933}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -229,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Interact: {fileID: 8645773241781043000}
   interactRange: 2
---- !u!114 &434004495760399420
+--- !u!114 &3371023105346851933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,17 +253,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8645773241781043005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02bf208c7e4d87248be63be763d622c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 796c05562d382c046833080fce94a297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CamuraShader: {fileID: 4800000, guid: 4ac0c17e443b9cf40b0ecf61d2070ef7, type: 3}
+  CamuraShader: {fileID: 4800000, guid: 81451fa234b0da848ad426b39cb617e6, type: 3}
   CamuraMaterial: {fileID: 0}
   pixelSize: 480
   warpStrength: 0
   warpDropOff: 5
   waveWarpStrength: 0.0025
   waveWarpSpeed: 2
-  shadowColor: {r: 0.10673152, g: 0.042274836, b: 0.1792453, a: 1}
+  shadowColor: {r: 0.10588236, g: 0.043137256, b: 0.18039216, a: 1}
 --- !u!1001 &6487394113339096924
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -503,10 +503,10 @@ MonoBehaviour:
   defaultRot: {x: 0, y: 0, z: 0}
   PcInRange: 0
   shootCooldown: 2
-  projectile: {fileID: 6713129002182635898, guid: 9cf3d72e28979d841b9243ddd1fca38e,
+  projectile: {fileID: 1449950004773456214, guid: 11a21c66929d2244faafd1e7ef290c5c,
     type: 3}
   projectileSpawnPos: {x: -14.83879, y: 0, z: 0.08000004}
   projectileSpawnRot: {x: -0.001561006, y: 0.5725185, z: 0.001090031, w: 0.8198896}
-  projectileSpeed: 0.05
+  projectileSpeed: 0.001
   projectileLifeTime: 1
   projectileDamage: 1

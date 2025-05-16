@@ -1,4 +1,4 @@
-﻿Shader "Custom/camura"
+﻿Shader "Custom/JD_camera"
 {
     Properties
     {
